@@ -24,7 +24,7 @@ const SaleAnimalCard: FC<SaleAnimalCardProps> = ({
 }) => {
   const [isBuyable, setIsBuyable] = useState<boolean>(false);
 
-  const getAnimalTokenOnwer = async () => {
+  const getAnimalTokenOwner = async () => {
     try {
       const response = await mintAnimalTokenContract.methods
         .ownerOf(animalTokenId)
@@ -55,7 +55,7 @@ const SaleAnimalCard: FC<SaleAnimalCardProps> = ({
   };
 
   useEffect(() => {
-    getAnimalTokenOnwer();
+    getAnimalTokenOwner();
   }, []);
 
   return (
